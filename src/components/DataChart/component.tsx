@@ -1,11 +1,21 @@
 import React from 'react';
 import {curveCatmullRom} from 'd3-shape';
-import {XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis} from 'react-vis'
+import {XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis} from 'react-vis';
+
+export interface DataChartProps {
+  data: {
+    x: number,
+    y: number
+  }[][],
+}
 
 
-export function App() {
+export const DataChart: React.FC<DataChartProps> = (props: DataChartProps) => {
+
+  const {data} = props
+
   return (
-    <div className="App">
+    <div>
      <XYPlot width={1000} height={600}>
       <HorizontalGridLines style={{stroke: '#B7E9ED'}} />
       <VerticalGridLines style={{stroke: '#B7E9ED'}} />
@@ -18,25 +28,26 @@ export function App() {
         }}
       />
       <YAxis title="Y Axis" />
+
+      {console.log('specific data:', data[0])}
       <LineSeries
         className="first-series"
-        data={[{x: 1, y: 3}, {x: 2, y: 5}, {x: 3, y: 15}, {x: 4, y: 12}]}
+        data={data}
         style={{
           strokeLinejoin: 'round',
           strokeWidth: 4
         }}
       />
-      <LineSeries className="second-series" data={null} />
       <LineSeries
         className="third-series"
         curve={'curveMonotoneX'}
-        data={[{x: 1, y: 10}, {x: 2, y: 4}, {x: 3, y: 2}, {x: 4, y: 15}]}
+        data={data[1]}
         strokeDasharray="7, 3"
       />
       <LineSeries
         className="fourth-series"
         curve={curveCatmullRom.alpha(0.5)}
-        data={[{x: 1, y: 7}, {x: 2, y: 11}, {x: 3, y: 9}, {x: 4, y: 2}]}
+        data={data[2]}
       />
     </XYPlot>
     </div>
