@@ -13,17 +13,21 @@
   * Session data will stored in structured database
 * Users will be able to see comparative data & visualizations about prior sessions.
 
-### Simple Database Design:
-![alt Database_Design](./_presentation_assets_/database_design.png)
-
 ## To Do:
 * [x] Set up PostgreSQL DB (via axios for now)
   * [x] Create example schema
   * [x] Send entry from client to DB
+  * [ ] Add table references
   * [ ] Queries:
     * [x] User
     * [x] Session & Meta Data
     * [ ] Device Data
+* [ ] Setup Express Server
+  * [x] Install
+  * [ ] Post Routes:
+    * [ ] addUser
+    * [x] addSession
+    * [ ] addSessionMetaData
 * [ ] UI Improvements
   * [ ] Provide queried data to UI
     * [ ] Animation?

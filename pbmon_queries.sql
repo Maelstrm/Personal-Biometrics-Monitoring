@@ -63,7 +63,7 @@ CREATE TABLE "ECG_Data" (
 
 
 
-
+-- Todo
 ALTER TABLE "Sessions" ADD CONSTRAINT "Sessions_fk0" FOREIGN KEY ("user_id") REFERENCES "User"("user_id");
 
 ALTER TABLE "Session_Meta_Data" ADD CONSTRAINT "Session_Meta_Data_fk0" FOREIGN KEY ("session_id") REFERENCES "Sessions"("session_id");
