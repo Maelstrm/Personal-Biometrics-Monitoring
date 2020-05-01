@@ -17,13 +17,13 @@
 ![alt Database_Design](./_presentation_assets_/database_design.png)
 
 ## To Do:
-* [ ] Set up PostgreSQL DB (via axios for now)
-  * [ ] Create example schema
-  * [ ] Send entry from client to DB
-  * [ ] Query for entries by user_id :
-    * [ ] All
-    * [ ] Single
-    * [ ] By parameter (basic search?)
+* [x] Set up PostgreSQL DB (via axios for now)
+  * [x] Create example schema
+  * [x] Send entry from client to DB
+  * [ ] Queries:
+    * [x] User
+    * [x] Session & Meta Data
+    * [ ] Device Data
 * [ ] UI Improvements
   * [ ] Provide queried data to UI
     * [ ] Animation?
