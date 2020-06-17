@@ -1,0 +1,15 @@
+{
+  "name": "pbmon_server",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --watch server server.js",
+    "docker:build": "docker build -t pbmon/server .",
+    "docker:run": "docker run --rm -p 49160:8080 pbmon/server"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "pg-promise": "^10.5.2"
+  }
+}

@@ -1,7 +1,8 @@
 {
-  "name": "pbi",
+  "name": "pbmon_mono_repo",
   "version": "0.1.0",
   "private": true,
+  "workspaces": ["services/*"],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -20,7 +21,13 @@
   "scripts": {
     "server": "nodemon --watch server server/server.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build", 
+    "docker:rm": "docker stop $(docker ps -a -q)",
+    "pbmon": "yarn pbmon:server:build && yarn pbmon:server:run",
+    "pbmon:server:build": "yarn workspace pbmon_server run docker:build",
+    "pbmon:docker:rm": "yarn workspace pbmon_server run docker:rm",
+    "pbmon:server:run": "yarn workspace pbmon_server run docker:run",
+
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
